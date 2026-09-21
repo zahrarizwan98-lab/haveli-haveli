@@ -9,6 +9,7 @@
 - [x] Verify in preview
 
 Open items for the user:
+
 - Replace placeholder phone number (+92 300 0000000) with the real booking number
 - Provide real names of actresses/brands to list in the Featured section
 - Confirm/adjust PKR rates

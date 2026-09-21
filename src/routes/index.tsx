@@ -1,6 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { CalendarCheck, Camera, Clock, Film, Heart, MapPin, Phone, Users } from "lucide-react";
+import {
+  CalendarCheck,
+  Camera,
+  Clock,
+  Film,
+  Heart,
+  MapPin,
+  Phone,
+  Sparkles,
+  Users,
+} from "lucide-react";
 
 import heroCourtyard from "@/assets/hero-courtyard.jpg";
 import veranda from "@/assets/veranda.jpg";
@@ -19,7 +29,10 @@ export const Route = createFileRoute("/")({
         content:
           "Heritage Haveli on Bedian Road, Lahore — a Mughal-era courtyard haveli trusted by famous actresses and leading brands for pre-wedding shoots, fashion editorials, and music videos. See rates and book a slot.",
       },
-      { property: "og:title", content: "Heritage Haveli — Mughal Shoot Location, Bedian Road Lahore" },
+      {
+        property: "og:title",
+        content: "Heritage Haveli — Mughal Shoot Location, Bedian Road Lahore",
+      },
       {
         property: "og:description",
         content:
@@ -92,63 +105,37 @@ const shootTypes = [
     icon: Heart,
     num: "01",
     title: "Pre-Wedding",
-    desc: "Golden-hour courtyards, scalloped archways, and a fountain courtyard made for cinematic couple stories. Bridal dressing rooms included.",
-    best: "Best for · 1–2 day stories",
+    desc: "Timeless architecture and beautiful outdoor spaces for your special moments.",
+    best: "Best for · Couple portraits & stories",
   },
   {
     icon: Camera,
     num: "02",
     title: "Fashion & Editorial",
-    desc: "Frescoed walls, jali light, and carved verandas — backdrops that have carried campaigns for Pakistan's leading fashion houses.",
+    desc: "Distinctive backdrops to bring creative concepts to life.",
     best: "Best for · Campaigns & lookbooks",
   },
   {
-    icon: Film,
+    icon: Sparkles,
     num: "03",
-    title: "Music Videos",
-    desc: "Full-property access with night shoots, space for rigging and large crews, and a quiet compound off Bedian Road.",
-    best: "Best for · Full-day & night shoots",
+    title: "Personal Shoots",
+    desc: "A beautiful setting for portraits, milestones and moments worth capturing.",
+    best: "Best for · Portraits & milestones",
   },
 ];
 
-const rates = [
-  {
-    name: "Half Day",
-    price: "PKR 85,000",
-    unit: "/ 5 hours",
-    features: [
-      "Courtyard + two verandas",
-      "Crew up to 15",
-      "Bridal / dressing room",
-      "On-site coordinator",
-    ],
-    featured: false,
-  },
-  {
-    name: "Full Day",
-    price: "PKR 150,000",
-    unit: "/ 10 hours",
-    features: [
-      "Entire haveli access",
-      "Crew up to 35",
-      "Power + generator backup",
-      "Changing & makeup rooms",
-      "Secure parking for crew vehicles",
-    ],
-    featured: true,
-  },
-  {
-    name: "Night / Full Production",
-    price: "PKR 250,000",
-    unit: "/ 12 hours",
-    features: [
-      "6pm – 6am exclusive access",
-      "Unlimited crew & rigging",
-      "Drone-friendly rooftop",
-      "Security + night staff",
-    ],
-    featured: false,
-  },
+const weddingRates = [
+  { duration: "1 Hour", price: "PKR 35,000" },
+  { duration: "1.5 Hours", price: "PKR 40,000" },
+  { duration: "2 Hours", price: "PKR 45,000" },
+];
+
+const fashionQuoteQuestions = [
+  "Preferred date & timings",
+  "Shoot duration (hours / half-day / full-day)",
+  "Approximate number of people / crew size",
+  "Scale of art direction & set styling",
+  "Whether you will bring a generator for lights",
 ];
 
 const featuredIn = [
@@ -161,7 +148,7 @@ const featuredIn = [
 ];
 
 /* ---------------- page ---------------- */
-function Index() {
+export function Index() {
   const [sent, setSent] = useState(false);
 
   return (
@@ -178,10 +165,18 @@ function Index() {
             </span>
           </a>
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-            <a href="#about" className="transition-colors hover:text-primary">About</a>
-            <a href="#gallery" className="transition-colors hover:text-primary">Gallery</a>
-            <a href="#types" className="transition-colors hover:text-primary">Shoot Types</a>
-            <a href="#rates" className="transition-colors hover:text-primary">Rates</a>
+            <a href="#about" className="transition-colors hover:text-primary">
+              About
+            </a>
+            <a href="#gallery" className="transition-colors hover:text-primary">
+              Gallery
+            </a>
+            <a href="#types" className="transition-colors hover:text-primary">
+              Shoot Types
+            </a>
+            <a href="#rates" className="transition-colors hover:text-primary">
+              Rates
+            </a>
           </nav>
           <a
             href="#booking"
@@ -208,7 +203,8 @@ function Index() {
               A Mughal-era location · Bedian Road, Lahore
             </p>
             <h1 className="max-w-[22ch] animate-fade-up font-display text-5xl font-semibold leading-[1.02] tracking-tight text-balance text-background [animation-delay:300ms] md:text-7xl">
-              Where Mughal grandeur meets <span className="italic text-terra-soft">your</span> next frame
+              Where Mughal grandeur meets <span className="italic text-terra-soft">your</span> next
+              frame
             </h1>
             <p className="mt-5 max-w-[52ch] animate-fade-up text-base text-pretty text-background/85 [animation-delay:450ms]">
               A heritage haveli of courtyards, scalloped arches, and carved verandas — opened for
@@ -238,40 +234,20 @@ function Index() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 md:grid-cols-12 md:py-28">
           <div className="md:col-span-5">
             <Reveal>
-              <SectionLabel>About the Haveli</SectionLabel>
+              <SectionLabel>About Us</SectionLabel>
             </Reveal>
             <Reveal delay={120}>
-              <h2 className="mt-4 max-w-[18ch] font-display text-4xl font-semibold leading-tight tracking-tight text-balance md:text-5xl">
-                Step through carved doors into a courtyard built for light
+              <h2 className="mt-4 max-w-[20ch] font-display text-4xl font-semibold leading-tight tracking-tight text-balance md:text-5xl">
+                Your one-stop spot for shoots!
               </h2>
             </Reveal>
             <Reveal delay={220}>
               <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-pretty text-muted-foreground">
-                Heritage Haveli is a family seat of red sandstone, white marble, and frescoed
-                archways on Bedian Road, Lahore. Its central courtyard opens to the sky, its
-                verandas frame every doorway like a composed shot, and its jali screens pour
-                patterned light across the floor each afternoon.
+                Heritage Haveli is a unique shoot location in Lahore, designed by its architecture
+                and surroundings to offer a variety of beautiful backdrops for photography and video
+                productions. From open courtyard to verandas, each space offers a distinct backdrop
+                with beautiful natural architectural detail.
               </p>
-              <p className="mt-4 max-w-[52ch] text-base leading-relaxed text-pretty text-muted-foreground">
-                We keep the heritage intact and hand the location to your production — with dressing
-                rooms, power, parking, and a coordinator who knows every corner of the building.
-              </p>
-            </Reveal>
-            <Reveal delay={320}>
-              <div className="mt-8 grid grid-cols-3 gap-4">
-                {[
-                  ["100+", "Years of heritage"],
-                  ["2", "Courtyards"],
-                  ["200+", "Shoots hosted"],
-                ].map(([num, label]) => (
-                  <div key={label}>
-                    <div className="font-display text-3xl font-semibold text-accent">{num}</div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground">
-                      {label}
-                    </div>
-                  </div>
-                ))}
-              </div>
             </Reveal>
           </div>
           <div className="md:col-span-7">
@@ -312,7 +288,8 @@ function Index() {
           <Reveal delay={250}>
             <p className="mx-auto mt-8 max-w-[56ch] text-center text-sm text-pretty text-muted-foreground">
               From celebrated actresses' bridal editorials to campaigns for the country's biggest
-              fashion labels, Heritage Haveli has quietly starred in productions you've already seen.
+              fashion labels, Heritage Haveli has quietly starred in productions you've already
+              seen.
             </p>
           </Reveal>
         </div>
@@ -325,7 +302,7 @@ function Index() {
             <div>
               <SectionLabel>Gallery</SectionLabel>
               <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight text-balance md:text-5xl">
-                Shoots, in situ
+                Explore Heritage Haveli
               </h2>
             </div>
             <p className="hidden max-w-[26ch] text-sm text-muted-foreground sm:block">
@@ -392,7 +369,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-24">
           <SectionLabel>Shoot Types</SectionLabel>
           <h2 className="mt-3 max-w-[20ch] font-display text-4xl font-semibold tracking-tight text-balance md:text-5xl">
-            Built for three kinds of frame
+            Spaces for every kind of shoot
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
             {shootTypes.map((t, i) => (
@@ -423,69 +400,173 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-24">
           <SectionLabel>Rates</SectionLabel>
           <h2 className="mt-3 max-w-[20ch] font-display text-4xl font-semibold tracking-tight text-balance md:text-5xl">
-            Clear tiers, honest pricing
+            Clear rates, tailored options
           </h2>
-          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-            {rates.map((r, i) => (
-              <Reveal key={r.name} delay={i * 120}>
-                <div
-                  className={`flex h-full flex-col rounded-2xl p-8 ring-1 transition-transform duration-300 ease-out hover:-translate-y-1 ${
-                    r.featured
-                      ? "bg-accent text-accent-foreground ring-foreground/10"
-                      : "border border-border bg-card ring-foreground/5"
-                  }`}
-                >
-                  {r.featured && (
-                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-terra-soft">
-                      Most booked
-                    </span>
-                  )}
-                  <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight">
-                    {r.name}
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {/* Card 1: Wedding Couple Shoots */}
+            <Reveal delay={0}>
+              <div className="flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-8 ring-1 ring-foreground/5 transition-transform duration-300 ease-out hover:-translate-y-1">
+                <div>
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
+                    Most Booked
+                  </span>
+                  <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight">
+                    Wedding Couple Shoots
                   </h3>
-                  <div className="mt-4 flex items-baseline gap-2">
-                    <span
-                      className={`font-display text-4xl font-semibold ${
-                        r.featured ? "text-terra-soft" : "text-primary"
-                      }`}
-                    >
-                      {r.price}
-                    </span>
-                    <span
-                      className={`text-sm ${r.featured ? "text-accent-foreground/70" : "text-muted-foreground"}`}
-                    >
-                      {r.unit}
-                    </span>
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    Timeless architecture and romantic courtyards for pre-wedding and bridal
+                    portraits.
+                  </p>
+
+                  <div className="mt-6 divide-y divide-border/60 rounded-xl border border-border/50 bg-secondary/50 p-4">
+                    {weddingRates.map((tier) => (
+                      <div
+                        key={tier.duration}
+                        className="flex items-center justify-between py-2.5 first:pt-0 last:pb-0"
+                      >
+                        <span className="text-sm font-medium">{tier.duration}</span>
+                        <span className="font-display text-lg font-semibold text-primary">
+                          {tier.price}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                  <ul
-                    className={`mt-6 space-y-3 text-sm ${
-                      r.featured ? "text-accent-foreground/85" : "text-muted-foreground"
-                    }`}
-                  >
-                    {r.features.map((f) => (
-                      <li key={f} className="flex gap-2">
-                        <span className={r.featured ? "text-terra-soft" : "text-primary"}>·</span>
-                        {f}
+
+                  <ul className="mt-6 space-y-2.5 text-xs text-muted-foreground">
+                    <li className="flex gap-2">
+                      <span className="font-bold text-primary">·</span>
+                      Full access to open courtyards, arches &amp; verandas
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-bold text-primary">·</span>
+                      Private bridal dressing room &amp; makeup vanity
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-bold text-primary">·</span>
+                      Dedicated on-site shoot coordinator
+                    </li>
+                  </ul>
+                </div>
+
+                <a
+                  href="#booking"
+                  className="mt-8 rounded-full bg-primary px-5 py-2.5 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-accent"
+                >
+                  Book Wedding Shoot
+                </a>
+              </div>
+            </Reveal>
+
+            {/* Card 2: Personal Shoots */}
+            <Reveal delay={120}>
+              <div className="flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-8 ring-1 ring-foreground/5 transition-transform duration-300 ease-out hover:-translate-y-1">
+                <div>
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    Portraits &amp; Milestones
+                  </span>
+                  <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight">
+                    Personal Shoots
+                  </h3>
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    A beautiful setting for individual portraits, milestones, and moments worth
+                    capturing.
+                  </p>
+
+                  <div className="mt-6 rounded-xl border border-border/50 bg-secondary/50 p-4">
+                    <div className="flex items-baseline gap-2">
+                      <span className="font-display text-4xl font-semibold text-primary">
+                        PKR 10,000
+                      </span>
+                      <span className="text-xs text-muted-foreground">/ 1 hour</span>
+                    </div>
+                    <p className="mt-1.5 text-[11px] text-muted-foreground">
+                      Additional hours or custom arrangements available on advance request.
+                    </p>
+                  </div>
+
+                  <ul className="mt-6 space-y-2.5 text-xs text-muted-foreground">
+                    <li className="flex gap-2">
+                      <span className="font-bold text-primary">·</span>
+                      Solo, family &amp; birthday portrait sessions
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-bold text-primary">·</span>
+                      Access to scenic courtyards and verandas
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-bold text-primary">·</span>
+                      Private changing space provided
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-bold text-primary">·</span>
+                      Natural architectural light &amp; calm setting
+                    </li>
+                  </ul>
+                </div>
+
+                <a
+                  href="#booking"
+                  className="mt-8 rounded-full border border-foreground/20 px-5 py-2.5 text-center text-sm font-medium transition-colors hover:bg-foreground hover:text-background"
+                >
+                  Book Personal Shoot
+                </a>
+              </div>
+            </Reveal>
+
+            {/* Card 3: Fashion Shoot */}
+            <Reveal delay={240}>
+              <div className="flex h-full flex-col justify-between rounded-2xl border border-border bg-accent p-8 text-accent-foreground ring-1 ring-foreground/10 transition-transform duration-300 ease-out hover:-translate-y-1">
+                <div>
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-terra-soft">
+                    Editorial &amp; Campaigns
+                  </span>
+                  <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight">
+                    Fashion Shoot
+                  </h3>
+                  <p className="mt-2 text-xs text-accent-foreground/80">
+                    For a price estimate, answer a few quick details below and our team will contact
+                    you with a tailored quote:
+                  </p>
+
+                  <div className="mt-6 rounded-xl border border-accent-foreground/15 bg-background/10 p-4">
+                    <div className="font-display text-xl font-semibold text-terra-soft">
+                      Custom Price Estimate
+                    </div>
+                    <p className="mt-1 text-[11px] text-accent-foreground/75">
+                      Tell us these few details to calculate your rate:
+                    </p>
+                  </div>
+
+                  <ul className="mt-5 space-y-2 text-xs text-accent-foreground/90">
+                    {fashionQuoteQuestions.map((q, idx) => (
+                      <li key={q} className="flex items-start gap-2.5">
+                        <span className="font-mono text-xs font-semibold text-terra-soft">
+                          0{idx + 1}.
+                        </span>
+                        <span>{q}</span>
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="#booking"
-                    className={`mt-8 rounded-full px-5 py-2.5 text-center text-sm font-medium transition-colors ${
-                      r.featured
-                        ? "bg-primary text-primary-foreground hover:bg-terra-soft"
-                        : "border border-foreground/20 hover:bg-foreground hover:text-background"
-                    }`}
-                  >
-                    Book a Slot
-                  </a>
+
+                  <p className="mt-4 text-[11px] leading-relaxed text-accent-foreground/75">
+                    Fill in these answers in our booking inquiry form and our coordinator will get
+                    in touch with your custom estimate.
+                  </p>
                 </div>
-              </Reveal>
-            ))}
+
+                <a
+                  href="#booking"
+                  className="mt-8 rounded-full bg-primary px-5 py-2.5 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-terra-soft"
+                >
+                  Request a Price Estimate
+                </a>
+              </div>
+            </Reveal>
           </div>
+
           <p className="mt-6 text-xs text-muted-foreground">
-            All rates include setup, teardown, and a walkthrough with our on-site coordinator.
-            Multi-day and recurring bookings available on request.
+            All shoots include on-site coordinator support and access to preparation areas. For
+            multi-day shoots, reach out directly.
           </p>
         </div>
       </section>
@@ -545,7 +626,10 @@ function Index() {
                 >
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="name" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      <label
+                        htmlFor="name"
+                        className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                      >
                         Full name
                       </label>
                       <input
@@ -557,7 +641,10 @@ function Index() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      <label
+                        htmlFor="email"
+                        className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                      >
                         Email
                       </label>
                       <input
@@ -569,7 +656,10 @@ function Index() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      <label
+                        htmlFor="phone"
+                        className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                      >
                         Phone / WhatsApp
                       </label>
                       <input
@@ -581,21 +671,27 @@ function Index() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="shoot-type" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      <label
+                        htmlFor="shoot-type"
+                        className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                      >
                         Shoot type
                       </label>
                       <select
                         id="shoot-type"
                         className="w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary"
                       >
-                        <option>Pre-wedding</option>
-                        <option>Fashion / editorial</option>
-                        <option>Music video</option>
-                        <option>Other production</option>
+                        <option>Wedding couple shoot</option>
+                        <option>Personal shoot</option>
+                        <option>Fashion shoot (Price estimate)</option>
+                        <option>Music video / Other production</option>
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="date" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      <label
+                        htmlFor="date"
+                        className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                      >
                         Preferred date
                       </label>
                       <input
@@ -605,25 +701,66 @@ function Index() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="crew" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                        Crew size
+                      <label
+                        htmlFor="duration"
+                        className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                      >
+                        Duration
+                      </label>
+                      <select
+                        id="duration"
+                        className="w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary"
+                      >
+                        <option>1 Hour</option>
+                        <option>1.5 Hours</option>
+                        <option>2 Hours</option>
+                        <option>Half Day (5 Hours)</option>
+                        <option>Full Day (10 Hours)</option>
+                        <option>Custom duration</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="crew"
+                        className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                      >
+                        Approx. number of people / Crew
                       </label>
                       <input
                         id="crew"
                         type="text"
-                        placeholder="e.g. 25"
+                        placeholder="e.g. 10–15 people"
                         className="w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary"
                       />
                     </div>
+                    <div className="sm:col-span-2">
+                      <label
+                        htmlFor="generator"
+                        className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                      >
+                        Bringing a generator for lights?
+                      </label>
+                      <select
+                        id="generator"
+                        className="w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary"
+                      >
+                        <option>No (Natural light / haveli house power)</option>
+                        <option>Yes (Bringing our own generator for lights)</option>
+                        <option>Need on-site generator arrangement assistance</option>
+                      </select>
+                    </div>
                   </div>
                   <div className="mt-5">
-                    <label htmlFor="notes" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                      Tell us about the shoot
+                    <label
+                      htmlFor="notes"
+                      className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
+                    >
+                      Scale of art direction &amp; shoot details
                     </label>
                     <textarea
                       id="notes"
                       rows={3}
-                      placeholder="Concept, mood, timings, and any special requirements…"
+                      placeholder="Share details on art direction scale, concept, specific backdrops, or special requirements for your estimate…"
                       className="w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary"
                     />
                   </div>
@@ -650,11 +787,21 @@ function Index() {
             </p>
           </div>
           <nav className="flex flex-wrap gap-6 text-sm text-background/70">
-            <a href="#about" className="transition-colors hover:text-terra-soft">About</a>
-            <a href="#gallery" className="transition-colors hover:text-terra-soft">Gallery</a>
-            <a href="#types" className="transition-colors hover:text-terra-soft">Shoot Types</a>
-            <a href="#rates" className="transition-colors hover:text-terra-soft">Rates</a>
-            <a href="#booking" className="transition-colors hover:text-terra-soft">Book a Slot</a>
+            <a href="#about" className="transition-colors hover:text-terra-soft">
+              About
+            </a>
+            <a href="#gallery" className="transition-colors hover:text-terra-soft">
+              Gallery
+            </a>
+            <a href="#types" className="transition-colors hover:text-terra-soft">
+              Shoot Types
+            </a>
+            <a href="#rates" className="transition-colors hover:text-terra-soft">
+              Rates
+            </a>
+            <a href="#booking" className="transition-colors hover:text-terra-soft">
+              Book a Slot
+            </a>
           </nav>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-background/40">
             © 2026 Heritage Haveli
