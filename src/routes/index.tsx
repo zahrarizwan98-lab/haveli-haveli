@@ -1155,7 +1155,7 @@ export function Index() {
               aria-modal="true"
             >
               <div
-                className="relative max-h-[92vh] w-full max-w-5xl overflow-hidden rounded-2xl border border-border/80 bg-card shadow-2xl"
+                className="relative max-h-[92vh] w-auto max-w-[92vw] overflow-hidden rounded-2xl border border-border/80 bg-card shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Header bar */}
@@ -1179,12 +1179,12 @@ export function Index() {
                 </div>
 
                 {/* Main image */}
-                <div className="relative flex max-h-[64vh] items-center justify-center bg-black/95">
+                <div className="relative flex items-center justify-center">
                   <img
                     src={currentFolderPhotos[lightboxImageIndex].src}
                     alt={currentFolderPhotos[lightboxImageIndex].alt}
                     referrerPolicy="no-referrer"
-                    className="max-h-[64vh] w-auto max-w-full object-contain"
+                    className="max-h-[72vh] w-auto max-w-full object-contain"
                   />
 
                   {/* Previous */}
@@ -1225,15 +1225,7 @@ export function Index() {
                 </div>
 
                 {/* Footer details */}
-                <div className="flex flex-col justify-between gap-4 border-t border-border bg-card p-5 sm:flex-row sm:items-center">
-                  <div>
-                    <h3 className="font-display text-xl font-semibold tracking-tight text-foreground">
-                      {currentFolderPhotos[lightboxImageIndex].title}
-                    </h3>
-                    <p className="mt-1 max-w-[65ch] text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                      {currentFolderPhotos[lightboxImageIndex].description}
-                    </p>
-                  </div>
+                <div className="flex justify-center border-t border-border bg-card p-4">
                   <a
                     href="#booking"
                     onClick={() => setLightboxImageIndex(null)}
