@@ -1087,31 +1087,20 @@ export function Index() {
                           }
                         }}
                       >
-                        <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
+                        <div className="relative aspect-[3/4] w-full overflow-hidden bg-muted">
                           <img
                             src={item.src}
                             alt={item.alt}
                             referrerPolicy="no-referrer"
                             className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                             loading="lazy"
-                            width={1024}
-                            height={768}
+                            width={768}
+                            height={1024}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/20 to-transparent opacity-75 transition-opacity group-hover:opacity-90" />
 
                           {/* Expand Icon */}
                           <div className="absolute right-3.5 top-3.5 rounded-full bg-background/80 p-1.5 text-foreground opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
                             <Maximize2 className="size-3.5" />
-                          </div>
-
-                          {/* Caption */}
-                          <div className="absolute inset-x-0 bottom-0 p-4 text-background">
-                            <h3 className="font-display text-lg font-semibold tracking-tight text-white drop-shadow-sm">
-                              {item.title}
-                            </h3>
-                            <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-white/85">
-                              {item.description}
-                            </p>
                           </div>
                         </div>
                       </div>
@@ -1120,7 +1109,7 @@ export function Index() {
                     {/* Add More Photos Upload Card */}
                     <div
                       onClick={() => uploadInputRef.current?.click()}
-                      className="group flex aspect-[4/3] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border/80 bg-secondary/30 p-6 text-center transition-all hover:border-primary hover:bg-secondary/60"
+                      className="group flex aspect-[3/4] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border/80 bg-secondary/30 p-6 text-center transition-all hover:border-primary hover:bg-secondary/60"
                       role="button"
                       tabIndex={0}
                       onKeyDown={(e) => {
