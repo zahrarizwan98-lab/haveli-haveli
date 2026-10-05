@@ -33,13 +33,15 @@ import {
 } from "lucide-react";
 
 import haveliCover from "@/assets/images/haveli_facade_cover_1790779329796.jpg";
-import heroCourtyard from "@/assets/hero-courtyard.jpg";
 import veranda from "@/assets/veranda.jpg";
 import verandaArches from "@/assets/veranda-arches.jpg";
 import galleryPrewedding from "@/assets/gallery-prewedding.jpg";
 import galleryFashion from "@/assets/gallery-fashion.jpg";
-import galleryMusicvideo from "@/assets/gallery-musicvideo.jpg";
 import galleryCrew from "@/assets/gallery-crew.jpg";
+import courtyardArches from "@/assets/images/courtyard-arches.jpg";
+import courtyardJaliWindow from "@/assets/images/courtyard-jali-window.jpg";
+import courtyardFountain from "@/assets/images/courtyard-fountain.jpg";
+import courtyardDoor from "@/assets/images/courtyard-door.jpg";
 import indoorStairArch from "@/assets/images/indoor-stair-arch.jpg";
 import indoorLanding from "@/assets/images/indoor-landing.jpg";
 import indoorStaircase from "@/assets/images/indoor-staircase.jpg";
@@ -184,8 +186,8 @@ const galleryFolders = [
   {
     id: "courtyard",
     name: "Courtyard",
-    cover: heroCourtyard,
-    desc: "Central marble fountain & scalloped arches under natural sky",
+    cover: courtyardArches,
+    desc: "Scalloped arches, marble fountain & carved jali screens under open sky",
   },
   {
     id: "rooftop",
@@ -262,23 +264,43 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "courtyard-1",
-    title: "Central Fountain Courtyard",
+    title: "Courtyard Arches from Above",
     category: "courtyard",
     categoryLabel: "Courtyard",
-    src: heroCourtyard,
-    alt: "Golden-hour Mughal courtyard of Heritage Haveli with scalloped arches and fountain",
+    src: courtyardArches,
+    alt: "View down into the haveli courtyard with scalloped Mughal arches, jali panels, wooden windows and potted palms",
     description:
-      "Open-sky central courtyard framed by scalloped Mughal arches and serene water fountain.",
+      "Sun-washed courtyard walls layered with scalloped arches, carved jali friezes and potted greenery.",
   },
   {
     id: "courtyard-2",
-    title: "Dusk Courtyard Illumination",
+    title: "Jali Lattice & Arched Window",
     category: "courtyard",
     categoryLabel: "Courtyard",
-    src: galleryMusicvideo,
-    alt: "Courtyard at dusk under warm string lights with silhouette of dancer",
+    src: courtyardJaliWindow,
+    alt: "Beige stone wall with geometric jali lattice panel above a scalloped arch framing a wooden window",
     description:
-      "Warm festive fairy lights and brass floor lanterns transforming the central courtyard for evening shoots.",
+      "A star-cut jali lattice above a scalloped arch — warm sandstone textures for close portrait frames.",
+  },
+  {
+    id: "courtyard-3",
+    title: "Marble Corner Fountain",
+    category: "courtyard",
+    categoryLabel: "Courtyard",
+    src: courtyardFountain,
+    alt: "White marble fountain with scalloped arch niche, wall lantern and geometric stone inlay floor",
+    description:
+      "A carved marble fountain in a glowing terracotta corner, over geometric stone floor inlay.",
+  },
+  {
+    id: "courtyard-4",
+    title: "Scalloped Arch Doorway",
+    category: "courtyard",
+    categoryLabel: "Courtyard",
+    src: courtyardDoor,
+    alt: "Tall wooden double doors set beneath a multi-lobed Mughal arch with dappled sunlight from a courtyard tree",
+    description:
+      "Tall teak double doors beneath a multi-lobed Mughal arch, dappled with courtyard sunlight.",
   },
   {
     id: "rooftop-1",
