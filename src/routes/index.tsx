@@ -40,9 +40,11 @@ import galleryPrewedding from "@/assets/gallery-prewedding.jpg";
 import galleryFashion from "@/assets/gallery-fashion.jpg";
 import galleryMusicvideo from "@/assets/gallery-musicvideo.jpg";
 import galleryCrew from "@/assets/gallery-crew.jpg";
-import galleryJali from "@/assets/gallery-jali.jpg";
+import indoorStairArch from "@/assets/images/indoor-stair-arch.jpg";
+import indoorLanding from "@/assets/images/indoor-landing.jpg";
+import indoorStaircase from "@/assets/images/indoor-staircase.jpg";
+import indoorCorridor from "@/assets/images/indoor-corridor.jpg";
 import rooftopSunset from "@/assets/images/rooftop_sunset_1790608458646.jpg";
-import indoorChamber from "@/assets/images/indoor_chamber_1790608473355.jpg";
 import outdoorGarden from "@/assets/images/outdoor_garden_1790608487512.jpg";
 import celebrityShoot from "@/assets/images/celebrity_shoot_1790608499756.jpg";
 import bridalPortrait from "@/assets/images/bridal_portrait_1790608513432.jpg";
@@ -176,8 +178,8 @@ const galleryFolders = [
   {
     id: "indoor",
     name: "Indoor",
-    cover: indoorChamber,
-    desc: "Frescoed chambers, jharokas & carved wooden archways",
+    cover: indoorStairArch,
+    desc: "Arched stairway hall, marble landings & carved wooden railings",
   },
   {
     id: "courtyard",
@@ -220,33 +222,43 @@ const galleryFolders = [
 const galleryItems: GalleryItem[] = [
   {
     id: "indoor-1",
-    title: "Heritage Fresco Chamber",
+    title: "Arched Stairway Hall",
     category: "indoor",
     categoryLabel: "Indoor",
-    src: indoorChamber,
-    alt: "Luxury Mughal heritage haveli interior chamber with intricate floral wall frescoes and brass chandelier",
+    src: indoorStairArch,
+    alt: "Scalloped Mughal arch framing twin wooden staircases in the haveli's marble stairway hall",
     description:
-      "Hand-painted floral frescoes, antique brass chandelier, and carved arch doorway bathed in soft natural light.",
+      "A grand scalloped arch framing twin wooden staircases over polished grey marble — a natural portrait backdrop.",
   },
   {
     id: "indoor-2",
-    title: "Carved Marble Jali Screen",
+    title: "Upper Landing Arches",
     category: "indoor",
     categoryLabel: "Indoor",
-    src: galleryJali,
-    alt: "Carved marble jali screen casting patterned shadows on the sandstone floor",
+    src: indoorLanding,
+    alt: "Upper landing with two cream arches, exposed brick ceiling vault and chevron marble inlay",
     description:
-      "Authentic geometric Mughal jali casting high-contrast architectural shadow play for portraiture.",
+      "Double cream arches, an exposed brick vault and chevron marble inlay bathed in soft stairwell light.",
   },
   {
     id: "indoor-3",
-    title: "Sandstone Veranda Gallery",
+    title: "Sculptural Staircase",
     category: "indoor",
     categoryLabel: "Indoor",
-    src: veranda,
-    alt: "Carved sandstone veranda corridor with arched columns and marble floor",
+    src: indoorStaircase,
+    alt: "Dark wooden balustrade winding beneath an exposed brick ceiling vault inside the haveli",
     description:
-      "Colonnaded corridor with intricate sandstone pillar arches and reflective polished marble floors.",
+      "A dark wooden balustrade winding beneath the exposed brick vault — dramatic lines for editorial frames.",
+  },
+  {
+    id: "indoor-4",
+    title: "Marble Landing & Lattice Window",
+    category: "indoor",
+    categoryLabel: "Indoor",
+    src: indoorCorridor,
+    alt: "Landing with twin arches, carved wooden railing and a lattice window overlooking the grounds",
+    description:
+      "Twin arches, carved wooden railing and lattice-window light overlooking the haveli grounds.",
   },
   {
     id: "courtyard-1",
