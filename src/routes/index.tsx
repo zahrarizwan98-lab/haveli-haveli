@@ -840,12 +840,12 @@ export function Index() {
           <div className="md:col-span-7">
             <Reveal delay={200} className="h-full">
               <img
-                src={veranda}
-                alt="Carved sandstone veranda corridor with arched columns and marble floor"
+                src={verandaArches}
+                alt="Mughal scalloped arch corridor of the haveli veranda lined with potted plants"
                 className="h-full min-h-[360px] w-full rounded-2xl object-cover"
                 loading="lazy"
-                width={1024}
-                height={1280}
+                width={1500}
+                height={2000}
               />
             </Reveal>
           </div>
