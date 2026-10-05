@@ -1213,16 +1213,6 @@ export function Index() {
                   )}
                 </div>
 
-                {/* Footer details */}
-                <div className="flex justify-center border-t border-border bg-card p-4">
-                  <a
-                    href="#booking"
-                    onClick={() => setLightboxImageIndex(null)}
-                    className="inline-flex shrink-0 items-center justify-center rounded-full bg-primary px-5 py-2.5 text-xs font-medium text-primary-foreground transition-colors hover:bg-accent sm:text-sm"
-                  >
-                    Book This Space
-                  </a>
-                </div>
               </div>
             </div>
           )}
