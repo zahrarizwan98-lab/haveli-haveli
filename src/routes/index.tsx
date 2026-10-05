@@ -186,8 +186,8 @@ const galleryFolders = [
   {
     id: "courtyard",
     name: "Courtyard",
-    cover: heroCourtyard,
-    desc: "Central marble fountain & scalloped arches under natural sky",
+    cover: courtyardArches,
+    desc: "Scalloped arches, marble fountain & carved jali screens under open sky",
   },
   {
     id: "rooftop",
