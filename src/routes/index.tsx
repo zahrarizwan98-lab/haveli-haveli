@@ -34,6 +34,7 @@ import {
 
 import haveliCover from "@/assets/images/haveli_facade_cover_1790779329796.jpg";
 import heroCourtyard from "@/assets/hero-courtyard.jpg";
+import veranda from "@/assets/veranda.jpg";
 import verandaArches from "@/assets/veranda-arches.jpg";
 import galleryPrewedding from "@/assets/gallery-prewedding.jpg";
 import galleryFashion from "@/assets/gallery-fashion.jpg";
