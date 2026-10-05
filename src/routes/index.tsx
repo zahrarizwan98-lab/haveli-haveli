@@ -1087,31 +1087,20 @@ export function Index() {
                           }
                         }}
                       >
-                        <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
+                        <div className="relative aspect-[3/4] w-full overflow-hidden bg-muted">
                           <img
                             src={item.src}
                             alt={item.alt}
                             referrerPolicy="no-referrer"
                             className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                             loading="lazy"
-                            width={1024}
-                            height={768}
+                            width={768}
+                            height={1024}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/20 to-transparent opacity-75 transition-opacity group-hover:opacity-90" />
 
                           {/* Expand Icon */}
                           <div className="absolute right-3.5 top-3.5 rounded-full bg-background/80 p-1.5 text-foreground opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
                             <Maximize2 className="size-3.5" />
-                          </div>
-
-                          {/* Caption */}
-                          <div className="absolute inset-x-0 bottom-0 p-4 text-background">
-                            <h3 className="font-display text-lg font-semibold tracking-tight text-white drop-shadow-sm">
-                              {item.title}
-                            </h3>
-                            <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-white/85">
-                              {item.description}
-                            </p>
                           </div>
                         </div>
                       </div>
@@ -1120,7 +1109,7 @@ export function Index() {
                     {/* Add More Photos Upload Card */}
                     <div
                       onClick={() => uploadInputRef.current?.click()}
-                      className="group flex aspect-[4/3] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border/80 bg-secondary/30 p-6 text-center transition-all hover:border-primary hover:bg-secondary/60"
+                      className="group flex aspect-[3/4] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border/80 bg-secondary/30 p-6 text-center transition-all hover:border-primary hover:bg-secondary/60"
                       role="button"
                       tabIndex={0}
                       onKeyDown={(e) => {
@@ -1155,7 +1144,7 @@ export function Index() {
               aria-modal="true"
             >
               <div
-                className="relative max-h-[92vh] w-full max-w-5xl overflow-hidden rounded-2xl border border-border/80 bg-card shadow-2xl"
+                className="relative max-h-[92vh] w-auto max-w-[92vw] overflow-hidden rounded-2xl border border-border/80 bg-card shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Header bar */}
@@ -1179,12 +1168,12 @@ export function Index() {
                 </div>
 
                 {/* Main image */}
-                <div className="relative flex max-h-[64vh] items-center justify-center bg-black/95">
+                <div className="relative flex items-center justify-center">
                   <img
                     src={currentFolderPhotos[lightboxImageIndex].src}
                     alt={currentFolderPhotos[lightboxImageIndex].alt}
                     referrerPolicy="no-referrer"
-                    className="max-h-[64vh] w-auto max-w-full object-contain"
+                    className="max-h-[72vh] w-auto max-w-full object-contain"
                   />
 
                   {/* Previous */}
@@ -1225,15 +1214,7 @@ export function Index() {
                 </div>
 
                 {/* Footer details */}
-                <div className="flex flex-col justify-between gap-4 border-t border-border bg-card p-5 sm:flex-row sm:items-center">
-                  <div>
-                    <h3 className="font-display text-xl font-semibold tracking-tight text-foreground">
-                      {currentFolderPhotos[lightboxImageIndex].title}
-                    </h3>
-                    <p className="mt-1 max-w-[65ch] text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                      {currentFolderPhotos[lightboxImageIndex].description}
-                    </p>
-                  </div>
+                <div className="flex justify-center border-t border-border bg-card p-4">
                   <a
                     href="#booking"
                     onClick={() => setLightboxImageIndex(null)}
