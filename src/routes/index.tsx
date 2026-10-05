@@ -264,23 +264,43 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "courtyard-1",
-    title: "Central Fountain Courtyard",
+    title: "Courtyard Arches from Above",
     category: "courtyard",
     categoryLabel: "Courtyard",
-    src: heroCourtyard,
-    alt: "Golden-hour Mughal courtyard of Heritage Haveli with scalloped arches and fountain",
+    src: courtyardArches,
+    alt: "View down into the haveli courtyard with scalloped Mughal arches, jali panels, wooden windows and potted palms",
     description:
-      "Open-sky central courtyard framed by scalloped Mughal arches and serene water fountain.",
+      "Sun-washed courtyard walls layered with scalloped arches, carved jali friezes and potted greenery.",
   },
   {
     id: "courtyard-2",
-    title: "Dusk Courtyard Illumination",
+    title: "Jali Lattice & Arched Window",
     category: "courtyard",
     categoryLabel: "Courtyard",
-    src: galleryMusicvideo,
-    alt: "Courtyard at dusk under warm string lights with silhouette of dancer",
+    src: courtyardJaliWindow,
+    alt: "Beige stone wall with geometric jali lattice panel above a scalloped arch framing a wooden window",
     description:
-      "Warm festive fairy lights and brass floor lanterns transforming the central courtyard for evening shoots.",
+      "A star-cut jali lattice above a scalloped arch — warm sandstone textures for close portrait frames.",
+  },
+  {
+    id: "courtyard-3",
+    title: "Marble Corner Fountain",
+    category: "courtyard",
+    categoryLabel: "Courtyard",
+    src: courtyardFountain,
+    alt: "White marble fountain with scalloped arch niche, wall lantern and geometric stone inlay floor",
+    description:
+      "A carved marble fountain in a glowing terracotta corner, over geometric stone floor inlay.",
+  },
+  {
+    id: "courtyard-4",
+    title: "Scalloped Arch Doorway",
+    category: "courtyard",
+    categoryLabel: "Courtyard",
+    src: courtyardDoor,
+    alt: "Tall wooden double doors set beneath a multi-lobed Mughal arch with dappled sunlight from a courtyard tree",
+    description:
+      "Tall teak double doors beneath a multi-lobed Mughal arch, dappled with courtyard sunlight.",
   },
   {
     id: "rooftop-1",
