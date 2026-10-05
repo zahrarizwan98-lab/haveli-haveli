@@ -33,13 +33,15 @@ import {
 } from "lucide-react";
 
 import haveliCover from "@/assets/images/haveli_facade_cover_1790779329796.jpg";
-import heroCourtyard from "@/assets/hero-courtyard.jpg";
 import veranda from "@/assets/veranda.jpg";
 import verandaArches from "@/assets/veranda-arches.jpg";
 import galleryPrewedding from "@/assets/gallery-prewedding.jpg";
 import galleryFashion from "@/assets/gallery-fashion.jpg";
-import galleryMusicvideo from "@/assets/gallery-musicvideo.jpg";
 import galleryCrew from "@/assets/gallery-crew.jpg";
+import courtyardArches from "@/assets/images/courtyard-arches.jpg";
+import courtyardJaliWindow from "@/assets/images/courtyard-jali-window.jpg";
+import courtyardFountain from "@/assets/images/courtyard-fountain.jpg";
+import courtyardDoor from "@/assets/images/courtyard-door.jpg";
 import indoorStairArch from "@/assets/images/indoor-stair-arch.jpg";
 import indoorLanding from "@/assets/images/indoor-landing.jpg";
 import indoorStaircase from "@/assets/images/indoor-staircase.jpg";
