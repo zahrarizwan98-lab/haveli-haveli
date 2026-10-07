@@ -1,6 +1,6 @@
 {
   "name": "Heritage Haveli",
-  "description": "A Mughal-era courtyard haveli on Bedian Road, Lahore for pre-wedding shoots, fashion editorials, and music video productions.",
+  "description": "Heritage Haveli on Bedian Road, Lahore — a Mughal-era courtyard haveli available as a shoot location for pre-wedding, fashion editorials, and music videos.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
