@@ -24,7 +24,6 @@ import {
   Menu,
   MessageSquare,
   Phone,
-  Plus,
   ShieldCheck,
   Sparkles,
   Trash2,
@@ -46,7 +45,13 @@ import indoorStairArch from "@/assets/images/indoor-stair-arch.jpg";
 import indoorLanding from "@/assets/images/indoor-landing.jpg";
 import indoorStaircase from "@/assets/images/indoor-staircase.jpg";
 import indoorCorridor from "@/assets/images/indoor-corridor.jpg";
-import rooftopSunset from "@/assets/images/rooftop_sunset_1790608458646.jpg";
+import rooftopPhoto1 from "@/assets/images/rooftop-1.asset.json";
+import rooftopPhoto2 from "@/assets/images/rooftop-2.asset.json";
+import rooftopPhoto3 from "@/assets/images/rooftop-3.asset.json";
+import rooftopPhoto4 from "@/assets/images/rooftop-4.asset.json";
+import rooftopPhoto5 from "@/assets/images/rooftop-5.asset.json";
+import rooftopPhoto6 from "@/assets/images/rooftop-6.asset.json";
+import rooftopPhoto7 from "@/assets/images/rooftop-7.asset.json";
 import outdoorGarden from "@/assets/images/outdoor_garden_1790608487512.jpg";
 import celebrityShoot from "@/assets/images/celebrity_shoot_1790608499756.jpg";
 import bridalPortrait from "@/assets/images/bridal_portrait_1790608513432.jpg";
@@ -192,8 +197,8 @@ const galleryFolders = [
   {
     id: "rooftop",
     name: "Haveli Rooftop",
-    cover: rooftopSunset,
-    desc: "Terracotta dome, sandstone chhatri pavilion & panoramic sunset view",
+    cover: rooftopPhoto1.url,
+    desc: "",
   },
   {
     id: "outdoor",
@@ -304,13 +309,66 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "rooftop-1",
-    title: "Sunset Rooftop Pavilion",
+    title: "Haveli Rooftop",
     category: "rooftop",
     categoryLabel: "Haveli Rooftop",
-    src: rooftopSunset,
-    alt: "Scenic haveli rooftop terrace in Lahore at golden hour sunset with terracotta dome and chhatri",
-    description:
-      "Terracotta Mughal dome and carved stone chhatri pavilion offering 360-degree golden hour sunset horizons.",
+    src: rooftopPhoto1.url,
+    alt: "Heritage Haveli rooftop photograph 1",
+    description: "",
+  },
+  {
+    id: "rooftop-2",
+    title: "Haveli Rooftop",
+    category: "rooftop",
+    categoryLabel: "Haveli Rooftop",
+    src: rooftopPhoto2.url,
+    alt: "Heritage Haveli rooftop photograph 2",
+    description: "",
+  },
+  {
+    id: "rooftop-3",
+    title: "Haveli Rooftop",
+    category: "rooftop",
+    categoryLabel: "Haveli Rooftop",
+    src: rooftopPhoto3.url,
+    alt: "Heritage Haveli rooftop photograph 3",
+    description: "",
+  },
+  {
+    id: "rooftop-4",
+    title: "Haveli Rooftop",
+    category: "rooftop",
+    categoryLabel: "Haveli Rooftop",
+    src: rooftopPhoto4.url,
+    alt: "Heritage Haveli rooftop photograph 4",
+    description: "",
+  },
+  {
+    id: "rooftop-5",
+    title: "Haveli Rooftop",
+    category: "rooftop",
+    categoryLabel: "Haveli Rooftop",
+    src: rooftopPhoto5.url,
+    alt: "Heritage Haveli rooftop photograph 5",
+    description: "",
+  },
+  {
+    id: "rooftop-6",
+    title: "Haveli Rooftop",
+    category: "rooftop",
+    categoryLabel: "Haveli Rooftop",
+    src: rooftopPhoto6.url,
+    alt: "Heritage Haveli rooftop photograph 6",
+    description: "",
+  },
+  {
+    id: "rooftop-7",
+    title: "Haveli Rooftop",
+    category: "rooftop",
+    categoryLabel: "Haveli Rooftop",
+    src: rooftopPhoto7.url,
+    alt: "Heritage Haveli rooftop photograph 7",
+    description: "",
   },
   {
     id: "outdoor-1",
@@ -425,9 +483,7 @@ export function Index() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openedFolderId, setOpenedFolderId] = useState<string | null>(null);
   const [lightboxImageIndex, setLightboxImageIndex] = useState<number | null>(null);
-  const [customPhotos, setCustomPhotos] = useState<Record<string, GalleryItem[]>>({});
   const [showStaffDesk, setShowStaffDesk] = useState(false);
-  const uploadInputRef = useRef<HTMLInputElement>(null);
 
   // Cover image with persistent custom upload and Google Drive link support
   const [coverImage, setCoverImage] = useState<string>(() => {
@@ -528,30 +584,12 @@ export function Index() {
     }
   });
 
-  const getFolderPhotos = (folderId: string) => {
-    const base = galleryItems.filter((item) => item.category === folderId);
-    const added = customPhotos[folderId] || [];
-    return [...base, ...added];
-  };
+  const getFolderPhotos = (folderId: string) =>
+    galleryItems.filter((item) => item.category === folderId);
 
   const currentFolderPhotos = openedFolderId ? getFolderPhotos(openedFolderId) : [];
 
-  const handleUploadPhotos = (folderId: string, files: FileList | null) => {
-    if (!files || files.length === 0) return;
-    const newItems: GalleryItem[] = Array.from(files).map((file, idx) => ({
-      id: `${folderId}-custom-${Date.now()}-${idx}`,
-      title: file.name.replace(/\.[^/.]+$/, ""),
-      category: folderId as GalleryItem["category"],
-      categoryLabel: galleryFolders.find((f) => f.id === folderId)?.name || folderId,
-      src: URL.createObjectURL(file),
-      alt: file.name,
-      description: "Added to " + (galleryFolders.find((f) => f.id === folderId)?.name || folderId),
-    }));
-    setCustomPhotos((prev) => ({
-      ...prev,
-      [folderId]: [...(prev[folderId] || []), ...newItems],
-    }));
-  };
+
 
   const [formData, setFormData] = useState({
     name: "",
@@ -991,9 +1029,11 @@ export function Index() {
 
                         {/* Card Body */}
                         <div className="flex flex-1 flex-col justify-between p-5">
-                          <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                            {folder.desc}
-                          </p>
+                          {folder.desc && (
+                            <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                              {folder.desc}
+                            </p>
+                          )}
 
                           <div className="mt-5 flex items-center justify-between border-t border-border/60 pt-4">
                             <span className="text-xs font-medium text-primary transition-colors group-hover:text-accent">
@@ -1063,34 +1103,14 @@ export function Index() {
                       <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
                         {activeFolder?.name}
                       </h2>
-                      <p className="mt-2 max-w-[65ch] text-sm text-muted-foreground md:text-base">
-                        {activeFolder?.desc}
-                      </p>
+                      {activeFolder?.desc && (
+                        <p className="mt-2 max-w-[65ch] text-sm text-muted-foreground md:text-base">
+                          {activeFolder.desc}
+                        </p>
+                      )}
                     </div>
 
-                    <div className="flex items-center gap-3">
-                      <input
-                        ref={uploadInputRef}
-                        type="file"
-                        multiple
-                        accept="image/*"
-                        className="hidden"
-                        onChange={(e) => {
-                          if (openedFolderId) {
-                            handleUploadPhotos(openedFolderId, e.target.files);
-                            e.target.value = "";
-                          }
-                        }}
-                      />
-                      <button
-                        type="button"
-                        onClick={() => uploadInputRef.current?.click()}
-                        className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-sm transition-colors hover:bg-accent sm:text-sm"
-                      >
-                        <Upload className="size-4" />
-                        Add Pictures to {activeFolder?.name}
-                      </button>
-                    </div>
+
                   </div>
 
                   {/* Pictures Grid inside the folder */}
@@ -1128,29 +1148,7 @@ export function Index() {
                       </div>
                     ))}
 
-                    {/* Add More Photos Upload Card */}
-                    <div
-                      onClick={() => uploadInputRef.current?.click()}
-                      className="group flex aspect-[3/4] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border/80 bg-secondary/30 p-6 text-center transition-all hover:border-primary hover:bg-secondary/60"
-                      role="button"
-                      tabIndex={0}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          uploadInputRef.current?.click();
-                        }
-                      }}
-                    >
-                      <div className="rounded-full bg-primary/10 p-3 text-primary transition-transform group-hover:scale-110">
-                        <Plus className="size-6" />
-                      </div>
-                      <h4 className="mt-3 font-display text-base font-semibold text-foreground">
-                        Add Pictures to {activeFolder?.name}
-                      </h4>
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        Click to select images from your device
-                      </p>
-                    </div>
+
                   </div>
                 </div>
               );
