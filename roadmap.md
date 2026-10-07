@@ -10,6 +10,9 @@
 - [x] Replace rooftop gallery with seven supplied portrait photos; IMG_2108 as cover
 - [x] Remove rooftop descriptions and Add Pictures controls in every folder
 - [x] Verify updated gallery in preview
+- [ ] Add two courtyard photos and choose a new cover; replace Outdoor Spots with six portrait photos
+- [ ] Remove Courtyard and Outdoor Spots descriptions and the Celebrities Shoot, Famous Brands and Bridal Shoots folders
+- [ ] Verify the updated four-folder gallery and portrait photo viewer
 
 Open items for the user:
 
