@@ -10,3 +10,5 @@
 > the editor, so keep the branch in a working state.
 
 <!-- LOVABLE:END -->
+
+- Gallery photos are declared as static gallery entries; uploaded photo assets use project asset pointers so the public gallery is consistent for all visitors.
