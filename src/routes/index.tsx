@@ -34,9 +34,6 @@ import {
 import haveliCover from "@/assets/images/haveli_facade_cover_1790779329796.jpg";
 import veranda from "@/assets/veranda.jpg";
 import verandaArches from "@/assets/veranda-arches.jpg";
-import galleryPrewedding from "@/assets/gallery-prewedding.jpg";
-import galleryFashion from "@/assets/gallery-fashion.jpg";
-import galleryCrew from "@/assets/gallery-crew.jpg";
 import courtyardArches from "@/assets/images/courtyard-arches.jpg";
 import courtyardJaliWindow from "@/assets/images/courtyard-jali-window.jpg";
 import courtyardFountain from "@/assets/images/courtyard-fountain.jpg";
@@ -52,9 +49,14 @@ import rooftopPhoto4 from "@/assets/images/rooftop-4.asset.json";
 import rooftopPhoto5 from "@/assets/images/rooftop-5.asset.json";
 import rooftopPhoto6 from "@/assets/images/rooftop-6.asset.json";
 import rooftopPhoto7 from "@/assets/images/rooftop-7.asset.json";
-import outdoorGarden from "@/assets/images/outdoor_garden_1790608487512.jpg";
-import celebrityShoot from "@/assets/images/celebrity_shoot_1790608499756.jpg";
-import bridalPortrait from "@/assets/images/bridal_portrait_1790608513432.jpg";
+import courtyardPhoto1919 from "@/assets/images/courtyard-1919.asset.json";
+import courtyardPhoto1917 from "@/assets/images/courtyard-1917.asset.json";
+import outdoorPhoto1920 from "@/assets/images/outdoor-1920.asset.json";
+import outdoorPhoto1921 from "@/assets/images/outdoor-1921.asset.json";
+import outdoorPhoto1922 from "@/assets/images/outdoor-1922.asset.json";
+import outdoorPhoto1925 from "@/assets/images/outdoor-1925.asset.json";
+import outdoorPhoto1927 from "@/assets/images/outdoor-1927.asset.json";
+import outdoorPhoto1928 from "@/assets/images/outdoor-1928.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -174,7 +176,7 @@ const featuredIn = [
 interface GalleryItem {
   id: string;
   title: string;
-  category: "indoor" | "courtyard" | "rooftop" | "outdoor" | "celebrities" | "brands" | "bridal";
+  category: "indoor" | "courtyard" | "rooftop" | "outdoor";
   categoryLabel: string;
   src: string;
   alt: string;
@@ -191,7 +193,7 @@ const galleryFolders = [
   {
     id: "courtyard",
     name: "Courtyard",
-    cover: courtyardArches,
+    cover: courtyardPhoto1919.url,
     desc: "",
   },
   {
@@ -203,26 +205,8 @@ const galleryFolders = [
   {
     id: "outdoor",
     name: "Outdoor Spots",
-    cover: outdoorGarden,
-    desc: "Lush green lawns, brick pathways & garden courtyards",
-  },
-  {
-    id: "celebrities",
-    name: "Celebrities Shoot",
-    cover: celebrityShoot,
-    desc: "A-list film units, video village monitors & commercial cinema sets",
-  },
-  {
-    id: "brands",
-    name: "Famous Brands",
-    cover: galleryFashion,
-    desc: "High-fashion lookbooks, bridal campaigns & wardrobe productions",
-  },
-  {
-    id: "bridal",
-    name: "Bridal Shoots",
-    cover: bridalPortrait,
-    desc: "Opulent bridal couture, regal heirloom jewelry & couple portraits",
+    cover: outdoorPhoto1922.url,
+    desc: "",
   },
 ];
 
@@ -300,6 +284,24 @@ const galleryItems: GalleryItem[] = [
     description: "",
   },
   {
+    id: "courtyard-5",
+    title: "Courtyard",
+    category: "courtyard",
+    categoryLabel: "Courtyard",
+    src: courtyardPhoto1919.url,
+    alt: "Heritage Haveli courtyard fountain and scalloped arches",
+    description: "",
+  },
+  {
+    id: "courtyard-6",
+    title: "Courtyard",
+    category: "courtyard",
+    categoryLabel: "Courtyard",
+    src: courtyardPhoto1917.url,
+    alt: "Heritage Haveli courtyard open sky framed by Mughal arches",
+    description: "",
+  },
+  {
     id: "rooftop-1",
     title: "Haveli Rooftop",
     category: "rooftop",
@@ -364,83 +366,57 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "outdoor-1",
-    title: "Bougainvillea Garden Lawn",
+    title: "Outdoor Spots",
     category: "outdoor",
     categoryLabel: "Outdoor Spots",
-    src: outdoorGarden,
-    alt: "Lush manicured heritage haveli garden lawn with blooming bougainvillea and brick pathway",
-    description:
-      "Manicured green lawn surrounded by mature trees, vintage stone fountain, and vibrant pink bougainvillea.",
+    src: outdoorPhoto1920.url,
+    alt: "Heritage Haveli outdoor photograph 1",
+    description: "",
   },
   {
     id: "outdoor-2",
-    title: "Veranda Garden Walkway",
+    title: "Outdoor Spots",
     category: "outdoor",
     categoryLabel: "Outdoor Spots",
-    src: veranda,
-    alt: "Arched sandstone corridor overlooking the outer grounds",
-    description:
-      "Veranda arches leading out to open brick courtyards with dappled natural sunlight throughout the day.",
+    src: outdoorPhoto1921.url,
+    alt: "Heritage Haveli outdoor photograph 2",
+    description: "",
   },
   {
-    id: "celebrities-1",
-    title: "Director's Monitor & Cinema Unit",
-    category: "celebrities",
-    categoryLabel: "Celebrities Shoot",
-    src: celebrityShoot,
-    alt: "Cinema production set with director at camera monitor and actress under softbox lighting",
-    description:
-      "Full-scale commercial cinema setup with video village monitors and professional softbox diffusion.",
+    id: "outdoor-3",
+    title: "Outdoor Spots",
+    category: "outdoor",
+    categoryLabel: "Outdoor Spots",
+    src: outdoorPhoto1922.url,
+    alt: "Heritage Haveli outdoor photograph 3",
+    description: "",
   },
   {
-    id: "celebrities-2",
-    title: "Main Courtyard Film Crew",
-    category: "celebrities",
-    categoryLabel: "Celebrities Shoot",
-    src: galleryCrew,
-    alt: "Film crew with cameras and lighting set up around the haveli's marble fountain courtyard",
-    description:
-      "Feature film and television drama crew staging multi-camera scenes in the haveli courtyard.",
+    id: "outdoor-4",
+    title: "Outdoor Spots",
+    category: "outdoor",
+    categoryLabel: "Outdoor Spots",
+    src: outdoorPhoto1925.url,
+    alt: "Heritage Haveli outdoor photograph 4",
+    description: "",
   },
   {
-    id: "brands-1",
-    title: "Couture Campaign Lookbook",
-    category: "brands",
-    categoryLabel: "Famous Brands",
-    src: galleryFashion,
-    alt: "Fashion editorial model in deep red couture gown framed by a frescoed arch",
-    description:
-      "High-end luxury bridal fashion campaign framed inside hand-painted Mughal fresco archways.",
+    id: "outdoor-5",
+    title: "Outdoor Spots",
+    category: "outdoor",
+    categoryLabel: "Outdoor Spots",
+    src: outdoorPhoto1927.url,
+    alt: "Heritage Haveli outdoor photograph 5",
+    description: "",
   },
   {
-    id: "brands-2",
-    title: "Commercial Fashion Unit",
-    category: "brands",
-    categoryLabel: "Famous Brands",
-    src: galleryCrew,
-    alt: "Fashion production crew with wardrobe and cinema cameras",
-    description:
-      "Turnkey production space accommodating large stylist wardrobes, hair & makeup setups, and heavy lighting gear.",
-  },
-  {
-    id: "bridal-1",
-    title: "Royal Crimson Bridal Portrait",
-    category: "bridal",
-    categoryLabel: "Bridal Shoots",
-    src: bridalPortrait,
-    alt: "Regal Pakistani bride in opulent crimson and gold hand-embroidered lehenga with traditional jewelry",
-    description:
-      "Hand-crafted zardozi bridal lehenga and heirloom jewelry captured against historic Mughal stonework.",
-  },
-  {
-    id: "bridal-2",
-    title: "Pre-Wedding Ivory & Gold Couple",
-    category: "bridal",
-    categoryLabel: "Bridal Shoots",
-    src: galleryPrewedding,
-    alt: "Pre-wedding couple in ivory and gold attire beneath a Mughal archway",
-    description:
-      "Romantic couple portrait under sandstone arches with warm late-afternoon natural ambient light.",
+    id: "outdoor-6",
+    title: "Outdoor Spots",
+    category: "outdoor",
+    categoryLabel: "Outdoor Spots",
+    src: outdoorPhoto1928.url,
+    alt: "Heritage Haveli outdoor photograph 6",
+    description: "",
   },
 ];
 
