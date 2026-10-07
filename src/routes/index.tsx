@@ -185,14 +185,14 @@ const galleryFolders = [
   {
     id: "indoor",
     name: "Indoor",
-    cover: indoorStairArch,
-    desc: "Arched stairway hall, marble landings & carved wooden railings",
+    cover: indoorLanding,
+    desc: "",
   },
   {
     id: "courtyard",
     name: "Courtyard",
     cover: courtyardArches,
-    desc: "Scalloped arches, marble fountain & carved jali screens under open sky",
+    desc: "",
   },
   {
     id: "rooftop",
@@ -234,8 +234,7 @@ const galleryItems: GalleryItem[] = [
     categoryLabel: "Indoor",
     src: indoorStairArch,
     alt: "Scalloped Mughal arch framing twin wooden staircases in the haveli's marble stairway hall",
-    description:
-      "A grand scalloped arch framing twin wooden staircases over polished grey marble — a natural portrait backdrop.",
+    description: "",
   },
   {
     id: "indoor-2",
@@ -244,8 +243,7 @@ const galleryItems: GalleryItem[] = [
     categoryLabel: "Indoor",
     src: indoorLanding,
     alt: "Upper landing with two cream arches, exposed brick ceiling vault and chevron marble inlay",
-    description:
-      "Double cream arches, an exposed brick vault and chevron marble inlay bathed in soft stairwell light.",
+    description: "",
   },
   {
     id: "indoor-3",
@@ -254,8 +252,7 @@ const galleryItems: GalleryItem[] = [
     categoryLabel: "Indoor",
     src: indoorStaircase,
     alt: "Dark wooden balustrade winding beneath an exposed brick ceiling vault inside the haveli",
-    description:
-      "A dark wooden balustrade winding beneath the exposed brick vault — dramatic lines for editorial frames.",
+    description: "",
   },
   {
     id: "indoor-4",
@@ -264,8 +261,7 @@ const galleryItems: GalleryItem[] = [
     categoryLabel: "Indoor",
     src: indoorCorridor,
     alt: "Landing with twin arches, carved wooden railing and a lattice window overlooking the grounds",
-    description:
-      "Twin arches, carved wooden railing and lattice-window light overlooking the haveli grounds.",
+    description: "",
   },
   {
     id: "courtyard-1",
@@ -274,8 +270,7 @@ const galleryItems: GalleryItem[] = [
     categoryLabel: "Courtyard",
     src: courtyardArches,
     alt: "View down into the haveli courtyard with scalloped Mughal arches, jali panels, wooden windows and potted palms",
-    description:
-      "Sun-washed courtyard walls layered with scalloped arches, carved jali friezes and potted greenery.",
+    description: "",
   },
   {
     id: "courtyard-2",
@@ -284,8 +279,7 @@ const galleryItems: GalleryItem[] = [
     categoryLabel: "Courtyard",
     src: courtyardJaliWindow,
     alt: "Beige stone wall with geometric jali lattice panel above a scalloped arch framing a wooden window",
-    description:
-      "A star-cut jali lattice above a scalloped arch — warm sandstone textures for close portrait frames.",
+    description: "",
   },
   {
     id: "courtyard-3",
@@ -294,8 +288,7 @@ const galleryItems: GalleryItem[] = [
     categoryLabel: "Courtyard",
     src: courtyardFountain,
     alt: "White marble fountain with scalloped arch niche, wall lantern and geometric stone inlay floor",
-    description:
-      "A carved marble fountain in a glowing terracotta corner, over geometric stone floor inlay.",
+    description: "",
   },
   {
     id: "courtyard-4",
@@ -304,8 +297,7 @@ const galleryItems: GalleryItem[] = [
     categoryLabel: "Courtyard",
     src: courtyardDoor,
     alt: "Tall wooden double doors set beneath a multi-lobed Mughal arch with dappled sunlight from a courtyard tree",
-    description:
-      "Tall teak double doors beneath a multi-lobed Mughal arch, dappled with courtyard sunlight.",
+    description: "",
   },
   {
     id: "rooftop-1",
