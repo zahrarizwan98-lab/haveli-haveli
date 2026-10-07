@@ -7,6 +7,9 @@
 - [x] Build index page: Nav (Book a Slot button), Hero, About, Featured In (actresses/brands), Gallery, Shoot Types, Rates (PKR), Booking/Inquiry form, Footer
 - [x] Head metadata (title, description, og tags)
 - [x] Verify in preview
+- [ ] Replace rooftop gallery with seven supplied portrait photos; IMG_2108 as cover
+- [ ] Remove rooftop descriptions and Add Pictures controls in every folder
+- [ ] Verify updated gallery in preview
 
 Open items for the user:
 
