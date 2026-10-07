@@ -185,14 +185,14 @@ const galleryFolders = [
   {
     id: "indoor",
     name: "Indoor",
-    cover: indoorStairArch,
-    desc: "Arched stairway hall, marble landings & carved wooden railings",
+    cover: indoorLanding,
+    desc: "",
   },
   {
     id: "courtyard",
     name: "Courtyard",
     cover: courtyardArches,
-    desc: "Scalloped arches, marble fountain & carved jali screens under open sky",
+    desc: "",
   },
   {
     id: "rooftop",
