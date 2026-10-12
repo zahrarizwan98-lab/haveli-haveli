@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+import {
   ArrowLeft,
   Bell,
   CalendarCheck,
@@ -163,6 +170,43 @@ const fashionQuoteQuestions = [
   "Scale of art direction & set styling",
   "Whether you will bring a generator for lights",
 ];
+
+const shootGuidelines = [
+  {
+    id: "g1",
+    num: "01",
+    title: "Guidelines for All Shoots",
+    points: [
+      "The total reserved time includes team arrival, setup, makeup, shooting and wrap-up.",
+      "Overtime charges apply when the team exceeds its agreed booking duration.",
+      "Clients must adhere to their agreed arrival time and coordinate with the on-site team.",
+    ],
+  },
+  {
+    id: "g2",
+    num: "02",
+    title: "Wedding Couple Shoots",
+    points: [
+      "A maximum 30-minute grace period is provided only in case of delays. This is not an extension of the booking.",
+      "After the grace period, the remaining shoot duration will be adjusted accordingly.",
+      "Extensions may be requested in advance, subject to availability and the applicable extension charges.",
+      "One photography/videography team is included. An additional Rs. 5,000 charge applies for a second team.",
+      "A maximum of two attendants are permitted on-site. Additional guests must wait off-site.",
+    ],
+  },
+  {
+    id: "g3",
+    num: "03",
+    title: "Fashion & Commercial Shoots",
+    points: [
+      "Production teams must not arrive before the agreed call time. Early arrival will start the booking duration.",
+      "Clients must arrange their own generator for professional lighting equipment.",
+      "Clients must arrange their own tables and chairs for the production team, as these are not provided.",
+      "The location must be left clean before departure.",
+    ],
+  },
+];
+
 
 const featuredIn = [
   "Leading couture houses",
@@ -749,7 +793,11 @@ export function Index() {
             <a href="#rates" className="transition-colors hover:text-primary">
               Rates
             </a>
+            <a href="#policy" className="transition-colors hover:text-primary">
+              Policy
+            </a>
           </nav>
+
           <div className="flex items-center gap-3">
             <a
               href="#booking"
@@ -799,7 +847,15 @@ export function Index() {
               >
                 Rates
               </a>
+              <a
+                href="#policy"
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1 text-muted-foreground transition-colors hover:text-primary"
+              >
+                Policy
+              </a>
             </nav>
+
           </div>
         )}
       </header>
@@ -1404,14 +1460,289 @@ export function Index() {
             </Reveal>
           </div>
 
-          <p className="mt-6 text-xs text-muted-foreground">
-            All shoots include on-site coordinator support and access to preparation areas. For
-            multi-day shoots, reach out directly.
-          </p>
+          <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-border/70 pt-6 sm:flex-row sm:items-center">
+            <p className="text-xs text-muted-foreground">
+              All shoots include on-site coordinator support and access to preparation areas. For
+              multi-day shoots, reach out directly.
+            </p>
+            <a
+              href="#policy"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition-colors hover:text-foreground"
+            >
+              <span>View Booking &amp; Cancellation Policy</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* BOOKING & CANCELLATION POLICY */}
+      <section id="policy" className="border-b border-border/80 bg-[#faf6ee] text-foreground">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+                Booking &amp; Cancellation Policy
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                Please review our booking and cancellation policy below so everything is clear and
+                transparent.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <Reveal delay={100}>
+              <div className="flex h-full flex-col justify-between rounded-3xl border border-[#e3d7c5] bg-[#fffefb] p-7 shadow-sm ring-1 ring-foreground/5 md:p-9">
+                <div>
+                  <div className="border-b border-[#ece2d3] pb-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[11px] uppercase tracking-wider text-primary">
+                        Shoot Category
+                      </span>
+                      <span className="rounded-full bg-primary/10 px-3 py-1 font-mono text-xs font-medium text-primary">
+                        Couple &amp; Bridal
+                      </span>
+                    </div>
+                    <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight">
+                      Wedding Shoots
+                    </h3>
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                      Please review our booking and cancellation policy below so everything is
+                      clear and transparent.
+                    </p>
+                  </div>
+
+                  <div className="mt-6">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-semibold text-primary">📌</span>
+                      <h4 className="font-display text-lg font-semibold tracking-tight text-foreground">
+                        Booking Policy
+                      </h4>
+                    </div>
+                    <ul className="mt-3 space-y-2.5 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                      <li className="flex items-start gap-2.5">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>
+                          A{" "}
+                          <strong className="text-foreground">50% advance payment</strong> is
+                          required to confirm and lock your shoot date and time.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>
+                          The <strong className="text-foreground">remaining amount</strong> is to
+                          be paid one day before the shoot.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="mt-8 border-t border-[#ece2d3] pt-6">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-semibold text-primary">📌</span>
+                      <h4 className="font-display text-lg font-semibold tracking-tight text-foreground">
+                        Cancellation Policy
+                      </h4>
+                    </div>
+                    <div className="mt-3 divide-y divide-[#ece2d3] rounded-xl border border-[#ece2d3] bg-[#fbf8f2] p-4">
+                      <div className="flex items-center justify-between py-2 text-xs first:pt-0 last:pb-0 sm:text-sm">
+                        <span className="text-muted-foreground">Cancelled on day of shoot</span>
+                        <span className="font-semibold text-destructive">No refund</span>
+                      </div>
+                      <div className="flex items-center justify-between py-2 text-xs first:pt-0 last:pb-0 sm:text-sm">
+                        <span className="text-muted-foreground">1 to 7 days prior to shoot</span>
+                        <span className="font-semibold text-primary">50% cancellation fee</span>
+                      </div>
+                      <div className="flex items-center justify-between py-2 text-xs first:pt-0 last:pb-0 sm:text-sm">
+                        <span className="text-muted-foreground">8+ days prior to shoot</span>
+                        <span className="font-semibold text-muted-foreground">
+                          25% cancellation fee
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 space-y-2.5 rounded-xl border border-[#ece2d3] bg-[#f8f4ec]/70 p-4 text-xs leading-relaxed text-muted-foreground">
+                      <p>
+                        <strong className="text-foreground">Force Majeure:</strong> In case of
+                        force majeure (rain, political unrest, protests, etc.) you may transfer
+                        your booking to another date or request a full refund.
+                      </p>
+                      <p className="border-t border-[#ece2d3] pt-2 text-[11px] text-muted-foreground">
+                        <strong className="text-foreground">Make-up Studio Delay:</strong>{" "}
+                        Cancellation of a shoot due to a delay at the make-up studio will not be
+                        refunded.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 border-t border-[#ece2d3] pt-4">
+                  <a
+                    href="#booking"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-primary transition-colors hover:text-foreground"
+                  >
+                    <span>Reserve wedding slot →</span>
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={200}>
+              <div className="flex h-full flex-col justify-between rounded-3xl border border-[#e3d7c5] bg-[#fffefb] p-7 shadow-sm ring-1 ring-foreground/5 md:p-8">
+                <div>
+                  <div className="border-b border-[#ece2d3] pb-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[11px] uppercase tracking-wider text-primary">
+                        Shoot Category
+                      </span>
+                      <span className="rounded-full bg-primary/10 px-3 py-1 font-mono text-xs font-medium text-primary">
+                        Campaigns &amp; Lookbooks
+                      </span>
+                    </div>
+                    <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight">
+                      Fashion Shoots
+                    </h3>
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                      Clear booking terms and deposit transfer guidelines for editorial &amp; brand
+                      shoots.
+                    </p>
+                  </div>
+
+                  <div className="mt-6">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-semibold text-primary">📌</span>
+                      <h4 className="font-display text-lg font-semibold tracking-tight text-foreground">
+                        Booking Policy
+                      </h4>
+                    </div>
+                    <ul className="mt-3 space-y-2.5 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                      <li className="flex items-start gap-2.5">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>
+                          <strong className="text-foreground">50% advance payment</strong> is
+                          required to confirm the booking.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>
+                          Remaining payment is to be made on the{" "}
+                          <strong className="text-foreground">day of the shoot</strong>, before the
+                          shoot begins.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="mt-8 border-t border-[#ece2d3] pt-6">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-semibold text-primary">📌</span>
+                      <h4 className="font-display text-lg font-semibold tracking-tight text-foreground">
+                        Cancellation Policy
+                      </h4>
+                    </div>
+                    <div className="mt-3 rounded-xl border border-[#ece2d3] bg-[#fbf8f2] p-4">
+                      <div className="flex items-start gap-2.5 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>
+                          Advance payment is{" "}
+                          <strong className="text-foreground">non-refundable</strong> if cancelled{" "}
+                          <strong className="text-foreground">1 to 7 days before</strong> shoot
+                          date.
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 rounded-xl border border-[#ece2d3] bg-[#f8f4ec]/70 p-4 text-xs leading-relaxed text-muted-foreground">
+                      <p>
+                        <strong className="text-foreground">Force Majeure:</strong> In case of
+                        force majeure the deposit can be transferred to a later date (at the
+                        latest within one month's time of the original shoot date).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 border-t border-[#ece2d3] pt-4">
+                  <a
+                    href="#booking"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-primary transition-colors hover:text-foreground"
+                  >
+                    <span>Request fashion estimate →</span>
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* SHOOT GUIDELINES */}
+      <section
+        id="guidelines"
+        className="border-b border-border/80 bg-background text-foreground"
+      >
+        <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+                Shoot Guidelines
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                Please review our on-site protocols to ensure your shoot runs smoothly and
+                seamlessly.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="mt-10">
+              <Accordion
+                type="multiple"
+                defaultValue={["g1", "g2", "g3"]}
+                className="space-y-4"
+              >
+                {shootGuidelines.map((group) => (
+                  <AccordionItem
+                    key={group.id}
+                    value={group.id}
+                    className="overflow-hidden rounded-2xl border border-[#e3d7c5] bg-[#fffefb] shadow-2xs transition-colors data-[state=open]:border-primary/40"
+                  >
+                    <AccordionTrigger className="px-6 py-5 hover:bg-[#faf6ee]/60 hover:no-underline sm:px-8">
+                      <span className="flex items-center gap-3.5">
+                        <span className="flex size-7 items-center justify-center rounded-full bg-primary/10 font-mono text-xs font-semibold text-primary">
+                          {group.num}
+                        </span>
+                        <span className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+                          {group.title}
+                        </span>
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-6 pt-1 sm:px-8">
+                      <ul className="space-y-3.5 border-t border-[#ece2d3] pt-4">
+                        {group.points.map((point) => (
+                          <li
+                            key={point}
+                            className="flex items-start gap-3 text-xs leading-relaxed text-muted-foreground sm:text-sm"
+                          >
+                            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* BOOKING */}
+
       <section id="booking" className="bg-accent text-accent-foreground">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 md:grid-cols-12 md:py-28">
           <div className="md:col-span-4">
@@ -1938,7 +2269,11 @@ export function Index() {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="font-display text-2xl font-semibold tracking-tight">Heritage Haveli</p>
+            <p className="mt-1 text-sm text-background/60">
+              A Mughal-era shoot location · Bedian Road, Lahore
+            </p>
             <div className="mt-2 flex flex-wrap items-center gap-4 text-xs text-background/70">
+
               <a
                 href="https://wa.me/923324565035"
                 target="_blank"
@@ -1969,7 +2304,11 @@ export function Index() {
             <a href="#rates" className="transition-colors hover:text-terra-soft">
               Rates
             </a>
+            <a href="#policy" className="transition-colors hover:text-terra-soft">
+              Policy
+            </a>
             <a href="#booking" className="transition-colors hover:text-terra-soft">
+
               Book a Slot
             </a>
           </nav>
