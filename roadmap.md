@@ -6,17 +6,15 @@
 - [x] Generate haveli imagery (hero courtyard, veranda, gallery shots, night shot)
 - [x] Build index page: Nav (Book a Slot button), Hero, About, Featured In (actresses/brands), Gallery, Shoot Types, Rates (PKR), Booking/Inquiry form, Footer
 - [x] Head metadata (title, description, og tags)
-- [x] Verify in preview
 - [x] Replace rooftop gallery with seven supplied portrait photos; IMG_2108 as cover
 - [x] Remove rooftop descriptions and Add Pictures controls in every folder
-- [x] Verify updated gallery in preview
-- [ ] Add two courtyard photos and choose a new cover; replace Outdoor Spots with six portrait photos
-- [ ] Remove Courtyard and Outdoor Spots descriptions and the Celebrities Shoot, Famous Brands and Bridal Shoots folders
-- [ ] Verify the updated four-folder gallery and portrait photo viewer
+- [x] Add two courtyard photos and choose a new cover; replace Outdoor Spots with six portrait photos
+- [x] Remove Courtyard and Outdoor Spots descriptions and the Celebrities Shoot, Famous Brands and Bridal Shoots folders
+- [x] Verify the updated four-folder gallery and portrait photo viewer
+- [x] Pull all changes from the Google AI Studio version (https://haveli-haveli-1.ai.studio): Booking & Cancellation Policy section, Shoot Guidelines accordion, Policy links in header/footer nav, policy link under Rates, footer tagline
+- [x] Verify the ported sections in the preview
 
 Open items for the user:
 
-- Replace placeholder phone number (+92 300 0000000) with the real booking number
 - Provide real names of actresses/brands to list in the Featured section
-- Confirm/adjust PKR rates
-- Optional: wire the booking form to email/WhatsApp or a database (needs Lovable Cloud)
+- Optional: wire the booking form to a database instead of WhatsApp (needs Lovable Cloud)
