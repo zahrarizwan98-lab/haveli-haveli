@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+import {
   ArrowLeft,
   Bell,
   CalendarCheck,
@@ -163,6 +170,43 @@ const fashionQuoteQuestions = [
   "Scale of art direction & set styling",
   "Whether you will bring a generator for lights",
 ];
+
+const shootGuidelines = [
+  {
+    id: "g1",
+    num: "01",
+    title: "Guidelines for All Shoots",
+    points: [
+      "The total reserved time includes team arrival, setup, makeup, shooting and wrap-up.",
+      "Overtime charges apply when the team exceeds its agreed booking duration.",
+      "Clients must adhere to their agreed arrival time and coordinate with the on-site team.",
+    ],
+  },
+  {
+    id: "g2",
+    num: "02",
+    title: "Wedding Couple Shoots",
+    points: [
+      "A maximum 30-minute grace period is provided only in case of delays. This is not an extension of the booking.",
+      "After the grace period, the remaining shoot duration will be adjusted accordingly.",
+      "Extensions may be requested in advance, subject to availability and the applicable extension charges.",
+      "One photography/videography team is included. An additional Rs. 5,000 charge applies for a second team.",
+      "A maximum of two attendants are permitted on-site. Additional guests must wait off-site.",
+    ],
+  },
+  {
+    id: "g3",
+    num: "03",
+    title: "Fashion & Commercial Shoots",
+    points: [
+      "Production teams must not arrive before the agreed call time. Early arrival will start the booking duration.",
+      "Clients must arrange their own generator for professional lighting equipment.",
+      "Clients must arrange their own tables and chairs for the production team, as these are not provided.",
+      "The location must be left clean before departure.",
+    ],
+  },
+];
+
 
 const featuredIn = [
   "Leading couture houses",
@@ -749,7 +793,11 @@ export function Index() {
             <a href="#rates" className="transition-colors hover:text-primary">
               Rates
             </a>
+            <a href="#policy" className="transition-colors hover:text-primary">
+              Policy
+            </a>
           </nav>
+
           <div className="flex items-center gap-3">
             <a
               href="#booking"
@@ -799,7 +847,15 @@ export function Index() {
               >
                 Rates
               </a>
+              <a
+                href="#policy"
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1 text-muted-foreground transition-colors hover:text-primary"
+              >
+                Policy
+              </a>
             </nav>
+
           </div>
         )}
       </header>
