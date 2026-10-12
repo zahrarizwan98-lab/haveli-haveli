@@ -2269,7 +2269,11 @@ export function Index() {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="font-display text-2xl font-semibold tracking-tight">Heritage Haveli</p>
+            <p className="mt-1 text-sm text-background/60">
+              A Mughal-era shoot location · Bedian Road, Lahore
+            </p>
             <div className="mt-2 flex flex-wrap items-center gap-4 text-xs text-background/70">
+
               <a
                 href="https://wa.me/923324565035"
                 target="_blank"
